@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function Home() {
     const [item, setItem] = useState('Mission Impossible')
-    const { data: movies, isPending, error } = useFetch(`http://www.omdbapi.com/?s=${item}&apikey=bb1151cd`)
+    const { data: movies, isPending, error } = useFetch(`https://www.omdbapi.com/?s=${item}&apikey=bb1151cd`)
     return (
         <div>
             <div className="flex items-center gap-5">
