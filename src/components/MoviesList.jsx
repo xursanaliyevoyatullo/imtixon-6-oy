@@ -15,9 +15,7 @@ function MoviesList({ movies }) {
               <h2 className="text-base font-bold mt-2">{Title}</h2>
               <h2 className="font-medium mb-2">{Year}-year</h2>
             </div>
-            <div className="btn btn-outline btn-warning mb-3 w-[280px] m-auto">
-              <Link to={`/movie/${imdbID}`}>Read More</Link>
-            </div>
+            <Link className="btn btn-outline btn-warning mb-3 w-[280px] m-auto" to={`/movie/${imdbID}`}>Read More</Link>
           </li>
         )
       })}
