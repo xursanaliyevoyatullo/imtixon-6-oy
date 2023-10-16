@@ -4,7 +4,7 @@ import { useFetch } from "../hooks/useFetch"
 function Movie() {
   const { imdbID } = useParams()
   const url = `https://www.omdbapi.com/?i=${imdbID}&apikey=2b8d4e56`
-  const { data, isPending, erro } = useFetch(url)
+  const { data, isPending, error } = useFetch(url)
   if (data === null) {
     return (
       <div>
@@ -15,10 +15,10 @@ function Movie() {
 
   const { Poster, Title, Year, Awards, Genre, Actors, Language, Country, } = data
   return (
-    <div className="mx-full mt-10 flex gap-7 items-center justify-center">
+    <div className="card-list-items">
       {data && <>
         <img className="rounded-xl" src={Poster} alt={Title} height="300" width="300" />
-        <div>
+        <div className="card-texts">
           <h2 className="text-xl font-bold mb-4 text-yellow-500">{Title}</h2>
           <p className="mb-5 font-medium">
             <span className="font-medium text-yellow-500">Year: </span>
@@ -44,7 +44,7 @@ function Movie() {
             <span className="font-medium text-yellow-500">Awards: </span>
             {Awards}
           </p>
-          <NavLink className="btn btn-outline btn-warning" to="/">Go Movies</NavLink>
+          <NavLink className="card-btn btn btn-outline btn-warning" to="/">Go Movies</NavLink>
         </div>
       </>}
     </div>
